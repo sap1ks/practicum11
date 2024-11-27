@@ -10,25 +10,27 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int h = Input("Кол-во часов");
-            int m = Input("Кол-во минут");
-            int s = Input("Кол-во секунд");
-            int seconds = Seconds(h, m, s);
-            Output(seconds);
+            int k = Input("Кол-во км");
+            int m = Input("Кол-во м");
+            int meters=Meters(k, m);
+            Output(meters);
             Console.ReadKey();
         }
-        static int Seconds(int h,int m,int s)
+        static int Meters(int k, int m)
         {
-            return h * 3600 + m * 60 + s;
-        } 
+            return k * 1000 + m;
+        }
         static int Input(string message)
         {
             Console.WriteLine(message);
             return int.Parse(Console.ReadLine());
         }
-        static void Output(int seconds)
+        static void Output(int meters)
         {
-            Console.WriteLine($"Всего секунд:{seconds}");
-        }
+            Console.WriteLine($"Всего метров:{meters}");
+
+    }
+
+
     }
 }
